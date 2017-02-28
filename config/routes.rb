@@ -9,4 +9,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resource :profile
+    end
+  end
 end

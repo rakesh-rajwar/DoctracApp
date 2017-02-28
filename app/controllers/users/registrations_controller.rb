@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :html, only: []
   respond_to :xml, only: []
 
-
+  before_action :inject_status_value, only: [:create]
   before_filter :not_allowed, only: [:new, :edit, :cancel]
 
   def not_allowed
@@ -26,5 +26,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :email,
       :status
     ])
+  end
+
+  def inject_status_value
+    params[:user][:status] = "REGISTRATION_COMPLETED"
   end
 end
