@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'welcome#index'
   # Doorkeeper
   use_doorkeeper do
     controllers :tokens => 'custom_tokens'
