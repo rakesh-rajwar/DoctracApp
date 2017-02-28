@@ -18,7 +18,8 @@ class CustomTokensController < Doorkeeper::TokensController
         # body[:user] = Oj.load(user_json)
 
         ### Or if you want to just append user using 'as_json'
-        body[:user] = user.as_json
+        body[:email] = user.email
+        body[:status] = user.status
       end
     end
 
