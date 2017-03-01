@@ -4,7 +4,6 @@ class ImageSerializer < ActiveModel::Serializer
     :name,
     :user_id,
     :url,
-    :tags,
     :versions
   )
 
