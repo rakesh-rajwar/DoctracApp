@@ -14,6 +14,14 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resource :profile
+      resources :images do
+        collection do
+          post :avatar, action: 'avatar_create'
+          post :photo_id, action: 'photo_id_create'
+          get :avatar
+          get :photo_id
+        end
+      end
     end
   end
 end

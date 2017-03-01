@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# Ruby version specifier to deployment.
 ruby '2.4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -17,7 +17,14 @@ gem 'puma', '~> 3.0'
 gem 'devise'
 # Doorkeeper is an OAuth 2 provider for Rails.  
 gem 'doorkeeper'
+#Rack Middleware for handling Cross-Origin Resource Sharing (CORS).
 gem 'rack-cors', :require => 'rack/cors'
+# Classier solution for file uploads for Rails.
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'file_validators'
+gem 'fog-aws'
+# ActiveModel::Serializer implementation and Rails hooks.
 gem 'active_model_serializers'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
