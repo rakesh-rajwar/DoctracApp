@@ -9,7 +9,7 @@ class Users::PasswordsController < Devise::PasswordsController
     user = User.find_by(email: password_reset_params[:email])
     if user.present?
      user.send_reset_password_instructions
-     render json: {responseMessage: "Password reset instructions sent to your email."},  status: :ok 
+     render json: {responseMessage: "You will receive an email with instructions on how to reset your password in a few minutes."},  status: :ok 
     else
       render json: { error: "Email not found" }, status: :unprocessable_entity
     end
