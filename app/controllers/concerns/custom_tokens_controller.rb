@@ -20,6 +20,7 @@ class CustomTokensController < Doorkeeper::TokensController
         ### Or if you want to just append user using 'as_json'
         body[:email] = user.email
         body[:status] = user.status
+        body[:avatar] = user.avatar
       end
     end
 

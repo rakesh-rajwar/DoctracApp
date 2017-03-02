@@ -29,6 +29,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def inject_status_value
-    params[:user][:status] = "REGISTRATION_COMPLETED"
+    params[:user][:status] = "REGISTRATION_COMPLETE"
   end
 end
