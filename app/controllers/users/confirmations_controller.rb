@@ -4,17 +4,26 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   #   super
   # end
 
-  # POST /resource/confirmation
-  # def create
-  #   super
-  # end
+  # POST /users/confirmation
+  def create
+    user = User.find_by(email: account_confirmation_params[:email])
+    if user.present?
+     user.send_confirmation_instructions
+     render json: {responseMessage: "Account confirmation instructions sent to your email."},  status: :ok 
+    else
+      render json: { error: "Email not found" }, status: :unprocessable_entity
+    end
+  end
 
   # GET /resource/confirmation?confirmation_token=abcdef
   # def show
   #   super
   # end
+  private
 
-  # protected
+  def account_confirmation_params
+    params.require(:user).permit(:email)
+  end
 
   # The path used after resending confirmation instructions.
   # def after_resending_confirmation_instructions_path_for(resource_name)

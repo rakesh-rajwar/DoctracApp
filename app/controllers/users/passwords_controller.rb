@@ -5,9 +5,15 @@ class Users::PasswordsController < Devise::PasswordsController
   # end
 
   # POST /resource/password
-  # def create
-  #   super
-  # end
+  def create
+    user = User.find_by(email: password_reset_params[:email])
+    if user.present?
+     user.send_reset_password_instructions
+     render json: {responseMessage: "Password reset instructions sent to your email."},  status: :ok 
+    else
+      render json: { error: "Email not found" }, status: :unprocessable_entity
+    end
+  end
 
   # GET /resource/password/edit?reset_password_token=abcdef
   # def edit
@@ -19,7 +25,11 @@ class Users::PasswordsController < Devise::PasswordsController
   #   super
   # end
 
-  # protected
+  private
+
+  def password_reset_params
+    params.require(:user).permit(:email)
+  end
 
   # def after_resetting_password_path_for(resource)
   #   super(resource)
