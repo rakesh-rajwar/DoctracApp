@@ -35,8 +35,8 @@ Rails.application.configure do
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => 'gmail.com',
-      :user_name => "reddy.biomedical.corp@gmail.com",
-      :password => "DoctorApp",
+      :user_name => "DocTrac.App@gmail.com",
+      :password => "ReddyBioMedical",
       :authentication       => "plain",
       :enable_starttls_auto => true,
   }
