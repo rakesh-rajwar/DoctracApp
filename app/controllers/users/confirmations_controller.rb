@@ -9,7 +9,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     user = User.find_by(email: account_confirmation_params[:email])
     if user.present?
      user.send_confirmation_instructions
-     render json: {responseMessage: "You will receive an email with instructions for how to confirm your email address in a few minutes."},  status: :ok 
+     render json: {responseMessage: "Your email confirmation request has been sent. Please check your email for a link to confirm email."},  status: :ok 
     else
       render json: { error: "Email not found" }, status: :unprocessable_entity
     end
