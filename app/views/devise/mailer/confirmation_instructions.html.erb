@@ -1,5 +1,237 @@
-<p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<table id="m_-5275302148447826091templateContainer" align="center" style="border-collapse:collapse;border:0" cellspacing="0" cellpadding="0" border="0" width="600">
+                            <tbody><tr>
+                                <td valign="top" align="center">
+                                    
+                                    <table id="m_-5275302148447826091templatePreheader" style="border-collapse:collapse;min-width:100%;background-color:#ffffff;border-top:0;border-bottom:0" cellspacing="0" cellpadding="0" border="0" width="600">
+                                        <tbody><tr>
+                                        	<td class="m_-5275302148447826091preheaderContainer" style="padding-top:9px" valign="top"><table class="m_-5275302148447826091mcnTextBlock" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody class="m_-5275302148447826091mcnTextBlockOuter">
+        <tr>
+            <td class="m_-5275302148447826091mcnTextBlockInner" valign="top">
+                
+                <table class="m_-5275302148447826091mcnTextContentContainer" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="600" align="left">
+                    <tbody><tr>
+                        
+                        <td class="m_-5275302148447826091mcnTextContent" style="padding-top:9px;padding-right:18px;padding-bottom:9px;padding-left:18px;color:#606060;font-family:Helvetica;font-size:11px;line-height:125%;text-align:left" valign="top">
+                        
+                            <span style="font-family:verdana,geneva,sans-serif"><span style="color:#500050;line-height:normal">Welcome <%= @email %>!</span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="center">
+                                    
+                                    <table id="m_-5275302148447826091templateHeader" style="border-collapse:collapse;min-width:100%;background-color:#ffffff;border-top:0;border-bottom:0" cellspacing="0" cellpadding="0" border="0" width="600">
+                                        <tbody><tr>
+                                            <td class="m_-5275302148447826091headerContainer" valign="top"><table class="m_-5275302148447826091mcnImageBlock" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody class="m_-5275302148447826091mcnImageBlockOuter">
+            <tr>
+                <td style="padding:9px" class="m_-5275302148447826091mcnImageBlockInner" valign="top">
+                    <table class="m_-5275302148447826091mcnImageContentContainer" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%" align="left">
+                        <tbody><tr>
+                            <td class="m_-5275302148447826091mcnImageContent" style="padding-right:9px;padding-left:9px;padding-top:0;padding-bottom:0;background-color:#808080" valign="top">
+                                
+                                    
+                                        <img alt="DocTrac logo" src= "<%=asset_path('logo.png', tabindex:"0", width:"560", align:"center", :style=>"max-width:560px;padding-bottom:0;display:inlne!important;vertical-align:bottom;border:0;outline:none;text-decoration:none")%>"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 643.5px; top: 200.367px;"><div id=":xc" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="aSK J-J5-Ji aYr"></div></div></div>
+                                    
+                                
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="center">
+                                    
+                                    <table id="m_-5275302148447826091templateBody" style="border-collapse:collapse;min-width:100%;background-color:#ffffff;border-top:0;border-bottom:0" cellspacing="0" cellpadding="0" border="0" width="600">
+                                        <tbody><tr>
+                                            <td class="m_-5275302148447826091bodyContainer" valign="top"><table class="m_-5275302148447826091mcnTextBlock" style="min-width:100%;border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody class="m_-5275302148447826091mcnTextBlockOuter">
+        <tr>
+            <td class="m_-5275302148447826091mcnTextBlockInner" style="padding-top:9px" valign="top">
+              	
+			    
+				
+                <table style="max-width:100%;min-width:100%;border-collapse:collapse" class="m_-5275302148447826091mcnTextContentContainer" cellspacing="0" cellpadding="0" border="0" width="100%" align="left">
+                    <tbody><tr>
+                        
+                        <td class="m_-5275302148447826091mcnTextContent" style="padding-top:0;padding-right:18px;padding-bottom:9px;padding-left:18px;color:#606060;font-family:Helvetica;font-size:15px;line-height:150%;text-align:left" valign="top"><span class="im">
+                        
+                            <p style="color:#505050;font-family:Arial;font-size:14px;line-height:21px;margin:1em 0;padding:0;text-align:left"><span style="font-family:verdana,geneva,sans-serif">We received a request to create the Doctrac account with this email address. If you made this request, please follow the instructions below.</span><br>
+&nbsp;</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</span><ol style="color:#505050;font-family:Arial;font-size:14px;line-height:21px">
+	<li><span style="font-family:verdana,geneva,sans-serif">You can confirm your account email through the link, click this link: <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></span></li><span class="im">
+	<li><span style="font-family:verdana,geneva,sans-serif">If clicking the link above does not work, you can also copy and paste (or retype) the entire link into your browser's navigation window.</span></li>
+</span></ol><span class="im">
+
+<p style="color:#505050;font-family:Arial;font-size:14px;line-height:21px;margin:1em 0;padding:0;text-align:left"><br>
+<span style="font-family:verdana,geneva,sans-serif">If you believe this message was sent to you in error, you can safely ignore this email.</span><br>
+&nbsp;</p>
+
+<p style="color:#505050;font-family:Arial;font-size:14px;line-height:21px;margin:1em 0;padding:0;text-align:left"><span style="font-family:verdana,geneva,sans-serif">Always at your service,<br>
+The Doctrac Team.</span></p>
+
+                        </span></td>
+                    </tr>
+                </tbody></table>
+				
+                
+				
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="center">
+                                    
+                                    <table id="m_-5275302148447826091templateColumns" style="border-collapse:collapse;min-width:100%;background-color:#ffffff;border-top:0;border-bottom:0" cellspacing="0" cellpadding="0" border="0" width="600">
+                                        <tbody><tr>
+                                            <td class="m_-5275302148447826091columnsContainer" width="33%" valign="top" align="left">
+                                                <table class="m_-5275302148447826091templateColumn" style="border-collapse:collapse;min-width:100%" cellspacing="0" cellpadding="0" border="0" width="100%" align="left">
+                                                    <tbody><tr>
+                                                        <td class="m_-5275302148447826091leftColumnContainer" valign="top"></td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                            <td class="m_-5275302148447826091columnsContainer" width="33%" valign="top" align="left">
+                                                <table class="m_-5275302148447826091templateColumn" style="border-collapse:collapse;min-width:100%" cellspacing="0" cellpadding="0" border="0" width="100%" align="left">
+                                                    <tbody><tr>
+                                                        <td class="m_-5275302148447826091centerColumnContainer" valign="top"></td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                            <td class="m_-5275302148447826091columnsContainer" width="33%" valign="top" align="left">
+                                                <table class="m_-5275302148447826091templateColumn" style="border-collapse:collapse;min-width:100%" cellspacing="0" cellpadding="0" border="0" width="100%" align="left">
+                                                    <tbody><tr>
+                                                        <td class="m_-5275302148447826091rightColumnContainer" valign="top"></td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="center">
+                                    
+                                    <table id="m_-5275302148447826091templateFooter" style="border-collapse:collapse;min-width:100%;background-color:#ffffff;border-top:0;border-bottom:0" cellspacing="0" cellpadding="0" border="0" width="600">
+                                        <tbody><tr>
+                                            <td class="m_-5275302148447826091footerContainer" style="padding-bottom:9px" valign="top"><table class="m_-5275302148447826091mcnDividerBlock" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody class="m_-5275302148447826091mcnDividerBlockOuter">
+        <tr>
+            <td class="m_-5275302148447826091mcnDividerBlockInner" style="padding:18px">
+                <table class="m_-5275302148447826091mcnDividerContent" style="border-top-width:1px;border-top-style:solid;border-top-color:#999999;border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tbody><tr>
+                        <td>
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody>
+</table><table class="m_-5275302148447826091mcnBoxedTextBlock" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody class="m_-5275302148447826091mcnBoxedTextBlockOuter">
+        <tr>
+            <td class="m_-5275302148447826091mcnBoxedTextBlockInner" valign="top">
+                
+                <table class="m_-5275302148447826091mcnBoxedTextContentContainer" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="600" align="left">
+                    <tbody><tr>
+                        
+                        <td style="padding-top:9px;padding-left:18px;padding-bottom:9px;padding-right:18px">
+                        
+                            <table class="m_-5275302148447826091mcnTextContentContainer" style="border:1px solid #999999;background-color:#fafafa;border-collapse:collapse" cellspacing="0" cellpadding="18" border="0" width="100%">
+                                <tbody><tr>
+                                    <td class="m_-5275302148447826091mcnTextContent" style="color:#606060;font-family:Helvetica;font-size:11px;line-height:125%;text-align:left" valign="top">
+                                        <div style="text-align:center"><span style="font-family:verdana,geneva,sans-serif"><span style="font-size:12px">Feel free to contact us at <a href="mailto:help@DocTrac.com" style="word-wrap:break-word;color:#606060;font-weight:normal;text-decoration:underline" target="_blank">reddy.biomedical@gmail.com</a>&nbsp;if you have any other questions.</span></span></div>
+
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+    </tbody>
+</table><table class="m_-5275302148447826091mcnDividerBlock" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody class="m_-5275302148447826091mcnDividerBlockOuter">
+        <tr>
+            <td class="m_-5275302148447826091mcnDividerBlockInner" style="padding:18px">
+                <table class="m_-5275302148447826091mcnDividerContent" style="border-top-width:1px;border-top-style:solid;border-top-color:#999999;border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tbody><tr>
+                        <td>
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody>
+</table><table class="m_-5275302148447826091mcnTextBlock" style="min-width:100%;border-collapse:collapse" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody class="m_-5275302148447826091mcnTextBlockOuter">
+        <tr>
+            <td class="m_-5275302148447826091mcnTextBlockInner" style="padding-top:9px" valign="top">
+              	
+			    
+				
+                <table style="max-width:390px;border-collapse:collapse" class="m_-5275302148447826091mcnTextContentContainer" cellspacing="0" cellpadding="0" border="0" width="100%" align="left">
+                    <tbody><tr>
+                        
+                        <td class="m_-5275302148447826091mcnTextContent" style="padding:0px 18px 9px;font-size:11px;color:#606060;font-family:Helvetica;line-height:125%;text-align:left" valign="top">
+                        
+                            <span style="font-family:verdana,geneva,sans-serif"><span style="font-size:11px"><em>Copyright &copy; DocTrac 2017. All rights reserved.</em><br>
+<br>
+<strong>Our mailing address is:</strong><br>
+<span style="color:#222222;line-height:normal">4276 54th Place</span><br>
+<span style="color:#222222;line-height:normal">Suite A, San Diego, CA 92115</span></span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+				
+                
+				
+                <table style="max-width:210px;border-collapse:collapse" class="m_-5275302148447826091mcnTextContentContainer" cellspacing="0" cellpadding="0" border="0" width="100%" align="left">
+                    <tbody><tr>
+                        
+                    </tr>
+                </tbody></table>
+				
+                
+				
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                </td>
+                            </tr>
+                        </tbody></table>
