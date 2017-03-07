@@ -1,5 +1,5 @@
 class  Api::V1::ImagesController < ApiController
-
+  wrap_parameters format: [:json, :url_encoded_form, :multipart_form]
   # GET /api/v1/images/avatar, Fetch avatar image for a user
   def avatar
     image = current_resource_owner.avatar
@@ -7,7 +7,7 @@ class  Api::V1::ImagesController < ApiController
       render json: image
     else
       e = image.errors.first
-      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+      error = e[0].to_s+" "+e[1].to_s rescue "Not found"
       render json: {error: error}, status: :unprocessable_entity
     end
   end
@@ -32,7 +32,7 @@ class  Api::V1::ImagesController < ApiController
       render json: image
     else
       e = image.errors.first
-      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+      error = e[0].to_s+" "+e[1].to_s rescue "Not found"
       render json: {error: error}, status: :unprocessable_entity
     end
   end
@@ -41,7 +41,7 @@ class  Api::V1::ImagesController < ApiController
   def photo_id_create
     image = current_resource_owner.images.find_or_initialize_by(tag: Image::PHOTO_ID)
     image.image_tag << Image::PHOTO_ID
-    if image.save
+    if image.update(image_params)
       render json: image, status: :created
     else
       e = image.errors.first
