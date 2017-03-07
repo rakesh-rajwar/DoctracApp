@@ -6,7 +6,9 @@ class  Api::V1::ImagesController < ApiController
     if image
       render json: image
     else
-      render json: { error: image.errors }, status: :unprocessable_entity
+      e = image.errors.first
+      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+      render json: {error: error}, status: :unprocessable_entity
     end
   end
 
@@ -17,7 +19,9 @@ class  Api::V1::ImagesController < ApiController
     if image.update(image_params)
       render json: image, status: :created
     else
-      render json: { error: image.errors }, status: :unprocessable_entity
+      e = image.errors.first
+      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+      render json: {error: error}, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +31,9 @@ class  Api::V1::ImagesController < ApiController
     if image
       render json: image
     else
-      render json: { error: image.errors }, status: :unprocessable_entity
+      e = image.errors.first
+      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+      render json: {error: error}, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +44,9 @@ class  Api::V1::ImagesController < ApiController
     if image.save
       render json: image, status: :created
     else
-      render json: { error: image.errors }, status: :unprocessable_entity
+      e = image.errors.first
+      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+      render json: {error: error}, status: :unprocessable_entity
     end
   end
 

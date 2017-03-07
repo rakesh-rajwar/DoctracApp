@@ -18,15 +18,28 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.string :emergency_contact_name1
       t.string :emergency_contact_phone1
       t.text :emergency_contact_address1
+      t.string :emergency_contact_state1
+      t.string :emergency_contact_city1
+      t.integer :emergency_contact_zip_code1
       t.string :emergency_contact_name2
       t.string :emergency_contact_phone2
       t.text :emergency_contact_address2
+      t.string :emergency_contact_state2
+      t.string :emergency_contact_city2
+      t.integer :emergency_contact_zip_code2
       t.string :poa_name
       t.string :poa_phone
       t.string :poa_email
+      t.string :poa_address
+      t.string :poa_address_state
+      t.string :poa_address_city
+      t.integer :poa_address_zip_code
       t.string :pharmacy_name
       t.string :pharmacy_phone
       t.text :pharmacy_address
+      t.string :pharmacy_state
+      t.string :pharmacy_city
+      t.integer :pharmacy_zip_code
       t.string :primary_insurance_name
       t.string :primary_insurance_plocy_number
       t.string :primary_insurance_group_number
