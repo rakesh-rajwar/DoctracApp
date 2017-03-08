@@ -17,4 +17,14 @@ class Image < ApplicationRecord
   scope :photo_id, -> {
     where('tag = ?', PHOTO_ID).order(updated_at: :DESC).limit(1)
   }
+
+  after_create :change_user_status
+
+
+
+  protected
+
+    def change_user_status
+      self.user.update(status: "PHOTO_COMPLETE") if self.tag == PHOTO_ID
+    end
 end

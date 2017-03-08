@@ -1,32 +1,32 @@
 class Api::V1::ProfilesController < ApiController
 
   def show
-    profile = current_resource_owner.profile
-    render json: profile
+    @profile = current_resource_owner.profile
+    render json: @profile
   end
 
+ # POST /api/v1/profile, profile save and update both.
   def create
-    profile = Profile.new(profile_params)
-    profile.user = current_resource_owner
-    if profile.save
-      render json: profile, status: :created
+    @profile = Profile.find_or_initialize_by(user_id: current_resource_owner.id)
+    if @profile.update(profile_params)
+      render json: @profile, status: :created
     else
-      e = profile.errors.first
-      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+      e = @profile.errors.first
+      error = e[0].to_s+" "+e[1].to_s rescue "Profile not saved."
       render json: {error: error}, status: :unprocessable_entity
     end
   end
 
-  def update
-    profile = current_resource_owner.profile
-    if profile.update(profile_params)
-      render json: profile
-    else
-      e = profile.errors.first
-      error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
-      render json: {error: error}, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   profile = current_resource_owner.profile
+  #   if profile.update(profile_params)
+  #     render json: profile
+  #   else
+  #     e = profile.errors.first
+  #     error = e[0].to_s+" "+e[1].to_s rescue "Not saved"
+  #     render json: {error: error}, status: :unprocessable_entity
+  #   end
+  # end
 
   private
     def profile_params
