@@ -17,6 +17,12 @@ class Api::V1::ProfilesController < ApiController
     end
   end
 
+  
+ # /api/v1/profile/get_cities?state=Alaska
+  def get_cities
+    render json: CS.cities(CS.states(:us).key(params[:state]), :us)
+  end
+
   # def update
   #   profile = current_resource_owner.profile
   #   if profile.update(profile_params)

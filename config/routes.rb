@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resource :profile
+      resource :profile do
+        get :get_cities, on: :collection
+      end
       resources :images do
         collection do
           post :avatar, action: 'avatar_create'

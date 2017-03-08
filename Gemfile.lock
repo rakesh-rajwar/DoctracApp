@@ -53,6 +53,8 @@ GEM
       mime-types (>= 1.16)
     case_transform (0.2)
       activesupport
+    city-state (0.0.13)
+      rubyzip (~> 1.1)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -192,6 +194,7 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    rubyzip (1.2.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -240,6 +243,7 @@ DEPENDENCIES
   active_model_serializers
   byebug
   carrierwave
+  city-state
   coffee-rails (~> 4.2)
   devise
   doorkeeper

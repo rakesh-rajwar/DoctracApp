@@ -21,6 +21,7 @@ class CustomTokensController < Doorkeeper::TokensController
         body[:email] = user.email
         body[:status] = user.status
         body[:avatar] = user.avatar
+        body[:states] = CS.states(:us).values
       end
     end
 
