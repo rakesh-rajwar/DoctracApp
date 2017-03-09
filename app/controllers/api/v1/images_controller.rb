@@ -40,7 +40,7 @@ class  Api::V1::ImagesController < ApiController
   # POST /api/v1/images/photo_id, Add an photo_id image record for a user.
   def photo_id_create
     image = current_resource_owner.images.find_or_initialize_by(tag: Image::PHOTO_ID)
-    image.image_tag << Image::PHOTO_ID
+    image.tag << Image::PHOTO_ID
     if image.update(image_params)
       render json: image, status: :created
     else
