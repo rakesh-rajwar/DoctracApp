@@ -9,10 +9,13 @@ require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Diseases_1.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+ActiveRecord::Base.connection.execute("TRUNCATE TABLE Diseases RESTART IDENTITY;")
 csv.each do |row|	
   t = Disease.new
-  t.name = row['name']
+  t.name = row['Name']
+  t.id = row['Id']
   t.save
+  p t
 end
 
-puts "There are now #{Disease.count} rows in the transactions table"
+puts "There are now #{Disease.count} rows in the Diseases table"
