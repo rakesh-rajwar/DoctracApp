@@ -26,6 +26,8 @@ Rails.application.routes.draw do
           get :photo_id
         end
       end
+      get 'diseases/search'
+      post 'diseases/add_to_patient'
     end
   end
 end

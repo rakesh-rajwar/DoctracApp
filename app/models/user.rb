@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_one  :profile
-  has_many :diseases
+  has_and_belongs_to_many :diseases
   has_many :images
   has_one  :avatar, -> { avatar }, class_name: Image.name
   has_one  :photo_id, -> { photo_id }, class_name: Image.name
