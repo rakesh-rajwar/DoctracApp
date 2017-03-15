@@ -11,7 +11,7 @@ class Profile < ApplicationRecord
   protected
 
     def change_user_status
-      self.user.update(status: "PROFILE_COMPLETE")
+      self.user.update(status: "PROFILE_COMPLETE") if self.user.status == "REGISTRATION_COMPLETE"
     end
 
 end

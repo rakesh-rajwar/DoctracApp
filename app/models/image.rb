@@ -25,6 +25,8 @@ class Image < ApplicationRecord
   protected
 
     def change_user_status
-      self.user.update(status: "PHOTO_COMPLETE") if self.tag == PHOTO_ID
+      if self.user.status == "PROFILE_COMPLETE"
+        self.user.update(status: "PHOTO_COMPLETE") if self.tag == PHOTO_ID
+      end
     end
 end
