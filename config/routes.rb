@@ -18,6 +18,10 @@ Rails.application.routes.draw do
       resource :profile do
         get :get_cities, on: :collection
       end
+      resources :emergency_contacts
+      resource :power_of_attorney
+      resource :pharmacy
+      resource :insurance
       resources :images do
         collection do
           post :avatar, action: 'avatar_create'

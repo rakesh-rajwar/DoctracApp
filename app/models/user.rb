@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_one  :profile
+  has_one  :emergency_contact
+  has_one  :power_of_attorney
+  has_one  :pharmacy
+  has_one  :insurance
   has_and_belongs_to_many :diseases
   has_many :images
   has_one  :avatar, -> { avatar }, class_name: Image.name

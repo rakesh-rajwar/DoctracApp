@@ -15,7 +15,6 @@ class Api::V1::DiseasesController < ApiController
   private
 
     def change_user_status
-      if current_resource_owner.status == "PHOTO_COMPLETE"
         current_resource_owner.update(status: "ONBOARDING_COMPLETE")
       end
     end

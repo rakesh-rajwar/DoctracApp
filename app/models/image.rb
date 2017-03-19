@@ -1,4 +1,5 @@
 class Image < ApplicationRecord
+  include Concerns::UserStatus
   mount_uploader :file, ImageUploader
   belongs_to :user
 
@@ -19,14 +20,4 @@ class Image < ApplicationRecord
   }
 
   after_create :change_user_status
-
-
-
-  protected
-
-    def change_user_status
-      if self.user.status == "PROFILE_COMPLETE"
-        self.user.update(status: "PHOTO_COMPLETE") if self.tag == PHOTO_ID
-      end
-    end
 end
