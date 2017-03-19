@@ -16,6 +16,5 @@ class Api::V1::DiseasesController < ApiController
 
     def change_user_status
         current_resource_owner.update(status: "ONBOARDING_COMPLETE")
-      end
     end
 end
