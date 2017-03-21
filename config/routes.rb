@@ -30,8 +30,14 @@ Rails.application.routes.draw do
           get :photo_id
         end
       end
-      get 'diseases/search'
-      post 'diseases/add_to_patient'
+      resources :diseases do
+        get :search, on: :collection                               
+        post :add_to_patient, on: :collection
+      end
+      resources :allergies do
+        get :search, on: :collection                               
+        post :add_to_patient, on: :collection
+      end
     end
   end
 end

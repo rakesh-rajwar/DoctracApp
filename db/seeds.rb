@@ -19,3 +19,17 @@ csv.each do |row|
 end
 
 puts "There are now #{Disease.count} rows in the Diseases table"
+
+#Allergy data , CSV File Diseases_1.csv need to be changed TODOs
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'Diseases_1.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+ActiveRecord::Base.connection.execute("TRUNCATE TABLE Allergies RESTART IDENTITY;")
+csv.each do |row|	
+  t = Allergy.new
+  t.name = row['Name']
+  t.id = row['Id']
+  t.save
+  p t
+end
+
+puts "There are now #{Allergy.count} rows in the Allergies table"

@@ -12,6 +12,12 @@ class Api::V1::DiseasesController < ApiController
   	render json: {responseMessage: "Diseases added to your profile successfully."}
   end
 
+  
+  def index
+    disease_list = current_resource_owner.diseases
+    render json: disease_list
+  end
+
   private
 
     def change_user_status

@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_one  :pharmacy
   has_one  :insurance
   has_and_belongs_to_many :diseases
+  has_and_belongs_to_many :allergies
   has_many :images
   has_one  :avatar, -> { avatar }, class_name: Image.name
   has_one  :photo_id, -> { photo_id }, class_name: Image.name
