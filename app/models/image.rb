@@ -1,5 +1,4 @@
 class Image < ApplicationRecord
-  include Concerns::UserStatus
   mount_uploader :file, ImageUploader
   belongs_to :user
 
@@ -19,5 +18,4 @@ class Image < ApplicationRecord
     where('tag = ?', PHOTO_ID).order(updated_at: :DESC).limit(1)
   }
 
-  after_create :change_user_status
 end
